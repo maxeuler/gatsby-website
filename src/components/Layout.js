@@ -27,6 +27,9 @@ const Layout = ({ children }) => (
             margin-top: 0;
           }
         }
+        a {
+          color: #555;
+        }
       `}
     ></Global>
     <Helmet>
@@ -35,7 +38,15 @@ const Layout = ({ children }) => (
       <meta name="description" content="test" />
     </Helmet>
     <Header></Header>
-    <main>{children}</main>
+    <main
+      css={css`
+        margin: 2rem auto;
+        max-width: 90vw;
+        width: 1200px;
+      `}
+    >
+      {children}
+    </main>
   </>
 );
 
