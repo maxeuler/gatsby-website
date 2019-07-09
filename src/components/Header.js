@@ -10,7 +10,8 @@ const NavLink = styled(Link)`
   text-decoration: none;
   padding: 2rem;
   display: inline-block;
-  :hover {
+  :hover,
+  &.current {
     border-bottom: 1px solid #000;
     color: #000;
   }
@@ -33,9 +34,15 @@ const Header = () => (
   >
     <NavLink to="/">Max Euler</NavLink>
     <nav>
-      <NavLink to="/projects">Projects</NavLink>
-      <NavLink to="/about">About</NavLink>
-      <NavLink to="/contact">Contact</NavLink>
+      <NavLink to="/projects" activeClassName="current">
+        Projects
+      </NavLink>
+      <NavLink to="/about" activeClassName="current">
+        About
+      </NavLink>
+      <NavLink to="/contact" activeClassName="current">
+        Contact
+      </NavLink>
     </nav>
   </header>
 );

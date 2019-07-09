@@ -36,7 +36,7 @@ const Landing = () => (
       <p>I'm Max,</p>
       <p>Web Developer 👋🏼</p>
     </div>
-    <Link to="/">View Projects</Link>
+    <Link to="/projects">View Projects</Link>
   </Title>
 );
 

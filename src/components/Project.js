@@ -12,6 +12,8 @@ const Project = () => {
           description
           image
           git_url
+          demo_url
+          stack
         }
       }
       allImageSharp {
@@ -35,17 +37,37 @@ const Project = () => {
             border: 1px solid #eee;
             box-shadow: 1px 1px 4px 2px #ddd;
             margin: 3rem 0;
-            .image {
-            }
+            height: 400px;
+
             .content {
-              margin: 0 3rem;
+              margin: 3rem;
               display: flex;
               flex-direction: column;
               justify-content: space-around;
-              font-size: 1.5rem;
+              font-size: 1.8rem;
               h3 {
-                font-size: 2.3rem;
+                font-size: 3rem;
               }
+              .stack {
+                font-style: italic;
+              }
+            }
+            a {
+              text-decoration: none;
+              border-radius: 3px;
+              border: 1px solid #888;
+              color: #888;
+              font-weight: 600;
+              padding: 1rem 3rem;
+              text-align: center;
+              :hover {
+                color: #555;
+                border-color: #555;
+              }
+            }
+            .links {
+              display: flex;
+              justify-content: space-around;
             }
           `}
           key={project.name}
@@ -60,11 +82,26 @@ const Project = () => {
           ></Image>
           <div className="content">
             <h3>{project.name}</h3>
-            <p>{project.image}</p>
+            <p className="stack">{project.stack}</p>
             <p>{project.description}</p>
-            <a href={project.git_url} target="_blank" rel="noopener noreferrer">
-              Git
-            </a>
+            <div className="links">
+              <a
+                href={project.git_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Git
+              </a>
+              {project.demo_url && (
+                <a
+                  href={project.demo_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
+              )}
+            </div>
           </div>
         </article>
       ))}
