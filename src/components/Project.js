@@ -1,21 +1,23 @@
 import React from 'react';
 import Image from 'gatsby-image';
 import { css } from '@emotion/core';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 
 const Project = () => {
-  const { allProjectsJson, image } = useStaticQuery(graphql`
+  const { allProjectsJson, allImageSharp } = useStaticQuery(graphql`
     query {
       allProjectsJson {
         nodes {
           name
           description
           image
+          git_url
         }
       }
-      image: file(relativePath: { eq: "js-quiz.png" }) {
-        sharp: childImageSharp {
+      allImageSharp {
+        nodes {
           fluid {
+            originalName
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -28,14 +30,15 @@ const Project = () => {
       {allProjectsJson.nodes.map(project => (
         <article
           css={css`
-            display: flex;
+            display: grid;
+            grid-template-columns: 50% 50%;
             border: 1px solid #eee;
             box-shadow: 1px 1px 4px 2px #ddd;
+            margin: 3rem 0;
             .image {
-              width: 50%;
             }
             .content {
-              margin-left: 3rem;
+              margin: 0 3rem;
               display: flex;
               flex-direction: column;
               justify-content: space-around;
@@ -45,15 +48,23 @@ const Project = () => {
               }
             }
           `}
+          key={project.name}
         >
-          <Image fluid={image.sharp.fluid} className="image"></Image>
+          <Image
+            fluid={
+              allImageSharp.nodes.find(
+                image => image.fluid.originalName == project.image
+              ).fluid
+            }
+            className="image"
+          ></Image>
           <div className="content">
             <h3>{project.name}</h3>
-            <p>stack</p>
-            <p>description vfoedisvnlkms vis evkwjs vwsk v eiksd yv eiks</p>
-            <div>
-              <a>Git</a>
-            </div>
+            <p>{project.image}</p>
+            <p>{project.description}</p>
+            <a href={project.git_url} target="_blank" rel="noopener noreferrer">
+              Git
+            </a>
           </div>
         </article>
       ))}
