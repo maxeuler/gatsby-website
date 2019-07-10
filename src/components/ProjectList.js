@@ -18,6 +18,7 @@ class ProjectList extends Component {
       >
         <h2>Projects 👨🏼‍💻</h2>
         <Project></Project>
+        <h2>More 🔜 </h2>
       </div>
     );
   }

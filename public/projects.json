@@ -28,5 +28,26 @@
 		"description": "Create a task. Say how much you wanna do. Read 12 chapters? Learn 4 hours? Add your progress every time you do something and have the best overview over your current status. Build with NodeJS at the server side, MongoDB as the database and NextJS as the frontend. (Still in development)",
 		"git_url": "https://github.com/maxeuler/make-progress",
 		"image": "make-progress.png"
+	},
+	{
+		"name": "best-stores-in-town",
+		"stack": "React * NextJS * Node * GraphQL * Prisma * Apollo",
+		"description": "Get some good food 🥘 Search for the right store or just create your own one 🏗️",
+		"git_url": "https://github.com/maxeuler/best-stores-in-town",
+		"image": "stores.png"
+	},
+	{
+		"name": "notes-application",
+		"stack": "React * NodeJS * MongoDB",
+		"description": "A small React notes application with NodeJS and MongoDB as the backend.",
+		"git_url": "https://github.com/maxeuler/MERN-Notes-Application",
+		"image": "notes.png"
+	},
+	{
+		"name": "todo-application",
+		"stack": "React * NodeJS * MongoDB",
+		"description": "Yes, there it is. The boring todo application. But everybody has to start somewhere. It is built with NodeJS, MongoDB and React.",
+		"git_url": "https://github.com/maxeuler/MERN-TODO-Application",
+		"image": "todo.png"
 	}
 ]

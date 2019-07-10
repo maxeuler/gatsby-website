@@ -33,7 +33,7 @@ const Project = () => {
         <article
           css={css`
             display: grid;
-            grid-template-columns: 50% 50%;
+            grid-template-columns: 60% 40%;
             border: 1px solid #eee;
             box-shadow: 1px 1px 4px 2px #ddd;
             margin: 3rem 0;

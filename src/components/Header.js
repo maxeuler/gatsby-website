@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
+import Image from 'gatsby-image';
 import { css } from '@emotion/core';
 
 const NavLink = styled(Link)`
@@ -10,6 +11,7 @@ const NavLink = styled(Link)`
   text-decoration: none;
   padding: 2rem;
   display: inline-block;
+  height: 100%;
   :hover,
   &.current {
     border-bottom: 1px solid #000;
@@ -29,13 +31,21 @@ const Header = () => (
         display: flex;
         margin: 0;
         justify-content: space-around;
+        align-items: center;
+      }
+      .links {
+        display: flex;
+        height: 100%;
+        > * {
+          margin: 0 1rem;
+        }
       }
     `}
   >
     <NavLink to="/">Max Euler</NavLink>
     <nav>
       <NavLink to="/projects" activeClassName="current">
-        Projects
+        <p>Projects</p>
       </NavLink>
       <NavLink to="/about" activeClassName="current">
         About
