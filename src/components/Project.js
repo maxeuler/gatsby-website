@@ -38,7 +38,7 @@ const Project = () => {
             box-shadow: 1px 1px 4px 2px #ddd;
             margin: 3rem 0;
             height: 400px;
-            @media (max-width: 700px) {
+            @media (max-width: 1000px) {
               grid-template-columns: 1fr;
               height: auto;
             }

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-import Image from 'gatsby-image';
 import { css } from '@emotion/core';
 
 const NavLink = styled(Link)`
@@ -17,6 +16,11 @@ const NavLink = styled(Link)`
     border-bottom: 1px solid #000;
     color: #000;
   }
+  @media (max-width: 700px) {
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding: 1rem;
+  }
 `;
 
 const Header = () => (
@@ -27,6 +31,10 @@ const Header = () => (
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @media (max-width: 700px) {
+        display: grid;
+        grid-template-columns: 100%;
+      }
       nav {
         display: flex;
         margin: 0;
