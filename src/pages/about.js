@@ -8,6 +8,9 @@ export const Title = styled('h3')`
   font-size: 6rem;
   text-align: center;
   font-weight: 300;
+  @media (max-width: 700px) {
+    font-size: 4rem;
+  }
 `;
 
 const About = () => (

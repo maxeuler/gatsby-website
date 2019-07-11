@@ -4,9 +4,7 @@ import { Link } from 'gatsby';
 
 const Title = styled('div')`
   margin: 3rem 0;
-  p {
-    font-size: 10rem;
-  }
+  font-size: 10rem;
   div {
     margin: 5rem;
   }
@@ -16,6 +14,10 @@ const Title = styled('div')`
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  @media (max-width: 700px) {
+    font-size: 5rem;
+    height: 60vh;
+  }
   a {
     font-size: 2.5rem;
     border: 1px solid #555;

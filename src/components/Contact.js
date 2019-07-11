@@ -13,6 +13,9 @@ const Contact = () => (
         text-align: center;
         margin-top: 6rem;
         line-height: 2;
+        @media (max-width: 700px) {
+          font-size: 2rem;
+        }
         a {
           text-decoration: none;
         }

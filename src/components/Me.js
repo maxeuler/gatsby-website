@@ -6,6 +6,9 @@ const AboutText = styled('div')`
   line-height: 1.5;
   max-width: 800px;
   margin: 0 auto;
+  @media (max-width: 700px) {
+    font-size: 2rem;
+  }
   ul {
     margin: 2rem 4rem;
     list-style: none;

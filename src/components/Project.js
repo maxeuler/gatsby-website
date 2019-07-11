@@ -38,7 +38,10 @@ const Project = () => {
             box-shadow: 1px 1px 4px 2px #ddd;
             margin: 3rem 0;
             height: 400px;
-
+            @media (max-width: 700px) {
+              grid-template-columns: 1fr;
+              height: auto;
+            }
             .content {
               margin: 3rem;
               display: flex;
@@ -50,6 +53,9 @@ const Project = () => {
               }
               .stack {
                 font-style: italic;
+                @media (max-width: 700px) {
+                  margin: 1rem 0;
+                }
               }
             }
             a {
@@ -68,6 +74,9 @@ const Project = () => {
             .links {
               display: flex;
               justify-content: space-around;
+              @media (max-width: 700px) {
+                margin-top: 2rem;
+              }
             }
           `}
           key={project.name}
